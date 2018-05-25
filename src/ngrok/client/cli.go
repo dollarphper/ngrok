@@ -12,27 +12,24 @@ Options:
 `
 
 const usage2 string = `
-Examples:
+命令:
+	ngrok start [tunnel] [...]    从配置文件中启动隧道
+	ngork start-all               启动配置文件中定义的所有隧道
+	ngrok list                    从配置文件中列出隧道名称
+	ngrok help                    显示帮助信息
+	ngrok version                 打印ngrok版本
+
+高级用法: ngrok [OPTIONS] <command> [command args] [...]
+
+示例:
 	ngrok 80
 	ngrok -subdomain=example 8080
 	ngrok -proto=tcp 22
 	ngrok -hostname="example.com" -httpauth="user:password" 10.0.0.1
-
-
-Advanced usage: ngrok [OPTIONS] <command> [command args] [...]
-Commands:
-	ngrok start [tunnel] [...]    Start tunnels by name from config file
-	ngork start-all               Start all tunnels defined in config file
-	ngrok list                    List tunnel names from config file
-	ngrok help                    Print help
-	ngrok version                 Print ngrok version
-
-Examples:
 	ngrok start www api blog pubsub
-	ngrok -log=stdout -config=ngrok.yml start ssh
+	ngrok -log=stdout -config=ngrok.conf start ssh
 	ngrok start-all
 	ngrok version
-
 `
 
 type Options struct {
